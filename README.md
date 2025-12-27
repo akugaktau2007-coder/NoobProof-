@@ -1,0 +1,2 @@
+# NoobProof-
+MyRobloxScript
