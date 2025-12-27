@@ -1,0 +1,226 @@
+local LMG2L = {}
+
+local Player = game:GetService("Players").LocalPlayer
+local PlayerGui = Player:FindFirstChildOfClass("PlayerGui") or Player:WaitForChild("PlayerGui", 5)
+
+LMG2L["ScreenGui_1"] = Instance.new("ScreenGui", PlayerGui)
+LMG2L["ScreenGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling
+LMG2L["ScreenGui_1"]["ResetOnSpawn"] = false
+
+LMG2L["Frame_2"] = Instance.new("Frame", LMG2L["ScreenGui_1"])
+LMG2L["Frame_2"]["BorderSizePixel"] = 0
+LMG2L["Frame_2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+LMG2L["Frame_2"]["Size"] = UDim2.new(0, 580, 0, 320)
+LMG2L["Frame_2"]["Position"] = UDim2.new(0.5, -290, 0.5, -160)
+LMG2L["Frame_2"]["Active"] = true
+
+LMG2L["Frame_3"] = Instance.new("Frame", LMG2L["Frame_2"])
+LMG2L["Frame_3"]["BorderSizePixel"] = 0
+LMG2L["Frame_3"]["BackgroundColor3"] = Color3.fromRGB(217, 217, 217)
+LMG2L["Frame_3"]["Size"] = UDim2.new(1, 0, 0, 25)
+LMG2L["Frame_3"]["Position"] = UDim2.new(0, 0, 0, 34)
+
+LMG2L["UIStroke_4"] = Instance.new("UIStroke", LMG2L["Frame_3"])
+
+local logoID = "rbxassetid://140688576719262"
+
+LMG2L["ImageLabel_5"] = Instance.new("ImageLabel", LMG2L["Frame_2"])
+LMG2L["ImageLabel_5"]["BorderSizePixel"] = 0
+LMG2L["ImageLabel_5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+LMG2L["ImageLabel_5"]["Image"] = logoID
+LMG2L["ImageLabel_5"]["Size"] = UDim2.new(0, 30, 0, 30)
+LMG2L["ImageLabel_5"]["Position"] = UDim2.new(0, 5, 0, 2)
+LMG2L["ImageLabel_5"]["BackgroundTransparency"] = 1
+
+LMG2L["DecalImage"] = Instance.new("ImageLabel", LMG2L["ScreenGui_1"])
+LMG2L["DecalImage"]["BorderSizePixel"] = 0
+LMG2L["DecalImage"]["BackgroundTransparency"] = 1
+LMG2L["DecalImage"]["Image"] = logoID
+LMG2L["DecalImage"]["Visible"] = false
+LMG2L["DecalImage"]["ZIndex"] = 10
+
+LMG2L["TextLabel_6"] = Instance.new("TextLabel", LMG2L["Frame_2"])
+LMG2L["TextLabel_6"]["BackgroundTransparency"] = 1
+LMG2L["TextLabel_6"]["Size"] = UDim2.new(0, 150, 0, 25)
+LMG2L["TextLabel_6"]["Text"] = "EasySploit"
+LMG2L["TextLabel_6"]["Position"] = UDim2.new(0, 40, 0, 5)
+LMG2L["TextLabel_6"]["TextXAlignment"] = Enum.TextXAlignment.Left
+LMG2L["TextLabel_6"]["Font"] = Enum.Font.SourceSansBold
+
+LMG2L["TextBox_a"] = Instance.new("TextBox", LMG2L["Frame_2"])
+LMG2L["TextBox_a"]["BorderSizePixel"] = 2
+LMG2L["TextBox_a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+LMG2L["TextBox_a"]["Size"] = UDim2.new(0, 350, 0, 150)
+LMG2L["TextBox_a"]["Position"] = UDim2.new(0, 15, 0, 65)
+LMG2L["TextBox_a"]["BorderColor3"] = Color3.fromRGB(100, 100, 100)
+LMG2L["TextBox_a"]["Text"] = ""
+LMG2L["TextBox_a"]["MultiLine"] = true
+LMG2L["TextBox_a"]["ClearTextOnFocus"] = false
+LMG2L["TextBox_a"]["TextWrapped"] = true
+LMG2L["TextBox_a"]["TextXAlignment"] = Enum.TextXAlignment.Left
+LMG2L["TextBox_a"]["TextYAlignment"] = Enum.TextYAlignment.Top
+
+LMG2L["Frame_b"] = Instance.new("Frame", LMG2L["Frame_2"])
+LMG2L["Frame_b"]["BorderSizePixel"] = 2
+LMG2L["Frame_b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+LMG2L["Frame_b"]["Size"] = UDim2.new(0, 190, 0, 235)
+LMG2L["Frame_b"]["Position"] = UDim2.new(0, 375, 0, 65)
+LMG2L["Frame_b"]["BorderColor3"] = Color3.fromRGB(100, 100, 100)
+
+LMG2L["ScrollingFrame"] = Instance.new("ScrollingFrame", LMG2L["Frame_b"])
+LMG2L["ScrollingFrame"]["BackgroundTransparency"] = 1
+LMG2L["ScrollingFrame"]["Size"] = UDim2.new(1, -10, 1, -10)
+LMG2L["ScrollingFrame"]["Position"] = UDim2.new(0, 5, 0, 5)
+LMG2L["ScrollingFrame"]["ScrollBarThickness"] = 4
+LMG2L["ScrollingFrame"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y
+
+LMG2L["UIListLayout"] = Instance.new("UIListLayout", LMG2L["ScrollingFrame"])
+LMG2L["UIListLayout"]["Padding"] = UDim.new(0, 4)
+
+local pName = Player.Name
+local scriptsLibrary = {
+    ["Polaria"] = 'require(110951620907921):Pload("'..pName..'")',
+    ["HappyHub ss"] = 'require(110047253067635):Hload("'..pName..'")',
+    ["c00lgui"] = 'require(133464960745567).woawsoc00l("'..pName..'")',
+    ["Goner"] = 'require(4513235536).G("'..pName..'")',
+    ["Guest1337"] = 'require(81657562726106).Guest1337("'..pName..'")',
+    ["The future"] = 'require(7089500700).load("'..pName..'")',
+    ["Immortality lord"] = 'require(6534274227)("'..pName..'")',
+    ["Grab Gun"] = 'require(5146659840).Dark_Eccentric("Dark_Eccentric", "'..pName..'")',
+    ["Void prince"] = 'require(5448300595).load("'..pName..'")',
+    ["Banzai Bazooka"] = 'require(4941303393).banzai("'..pName..'")',
+    ["Viankos"] = 'require(6123029966).vian("'..pName..'")',
+    ["Anonymous particles"] = [[for i, v in pairs(game.Players:GetChildren()) do local emit = Instance.new("ParticleEmitter") if v.Character and v.Character:FindFirstChild("Torso") then emit.Parent = v.Character.Torso emit.Texture = "http://www.roblox.com/asset/?id=127476787" emit.VelocitySpread = 50 end end]],
+    ["c00lkidd message"] = [[local msg = Instance.new("Message", workspace) msg.Text = "c00lkidd: HAHAHA NOOBS I'M BACK" wait(3) msg.Text = "DIE NOOBS" wait(2) for _, plr in pairs(game.Players:GetPlayers()) do if plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then local x = Instance.new("Explosion", workspace) x.Position = plr.Character.HumanoidRootPart.Position end end msg:Destroy()]],
+    ["c00lexploit2025 message"] = [[local hint = Instance.new("Hint", workspace) hint.Text = "c00lexploit2025" local msg = Instance.new("Message", workspace) msg.Text = "c00lexploit2025 was here" task.wait(5) hint:Destroy() msg:Destroy()]]
+}
+
+for name, content in pairs(scriptsLibrary) do
+    local btn = Instance.new("TextButton", LMG2L["ScrollingFrame"])
+    btn.Size = UDim2.new(1, -5, 0, 28)
+    btn.BackgroundColor3 = Color3.fromRGB(217, 217, 217)
+    btn.Text = name
+    btn.BorderSizePixel = 1
+    btn.MouseButton1Click:Connect(function() LMG2L["TextBox_a"].Text = content end)
+end
+
+LMG2L["TextButton_e"] = Instance.new("TextButton", LMG2L["Frame_2"])
+LMG2L["TextButton_e"]["Text"] = "Execute"
+LMG2L["TextButton_e"]["Size"] = UDim2.new(0, 80, 0, 35)
+LMG2L["TextButton_e"]["Position"] = UDim2.new(0, 15, 0, 220)
+LMG2L["TextButton_e"]["BackgroundColor3"] = Color3.fromRGB(217, 217, 217)
+LMG2L["TextButton_e"]["BorderSizePixel"] = 2
+LMG2L["TextButton_e"]["BorderColor3"] = Color3.fromRGB(100, 100, 100)
+
+LMG2L["TextButton_d"] = Instance.new("TextButton", LMG2L["Frame_2"])
+LMG2L["TextButton_d"]["Text"] = "Clear"
+LMG2L["TextButton_d"]["Size"] = UDim2.new(0, 80, 0, 35)
+LMG2L["TextButton_d"]["Position"] = UDim2.new(0, 105, 0, 220)
+LMG2L["TextButton_d"]["BackgroundColor3"] = Color3.fromRGB(217, 217, 217)
+LMG2L["TextButton_d"]["BorderSizePixel"] = 2
+LMG2L["TextButton_d"]["BorderColor3"] = Color3.fromRGB(100, 100, 100)
+
+LMG2L["TextButton_c"] = Instance.new("TextButton", LMG2L["Frame_2"])
+LMG2L["TextButton_c"]["Text"] = "Inject"
+LMG2L["TextButton_c"]["Size"] = UDim2.new(0, 80, 0, 35)
+LMG2L["TextButton_c"]["Position"] = UDim2.new(0, 195, 0, 220)
+LMG2L["TextButton_c"]["BackgroundColor3"] = Color3.fromRGB(217, 217, 217)
+LMG2L["TextButton_c"]["BorderSizePixel"] = 2
+LMG2L["TextButton_c"]["BorderColor3"] = Color3.fromRGB(100, 100, 100)
+
+LMG2L["TextButton_re"] = Instance.new("TextButton", LMG2L["Frame_2"])
+LMG2L["TextButton_re"]["Text"] = "RE"
+LMG2L["TextButton_re"]["Size"] = UDim2.new(0, 60, 0, 35)
+LMG2L["TextButton_re"]["Position"] = UDim2.new(0, 285, 0, 220)
+LMG2L["TextButton_re"]["BackgroundColor3"] = Color3.fromRGB(217, 217, 217)
+LMG2L["TextButton_re"]["BorderSizePixel"] = 2
+LMG2L["TextButton_re"]["BorderColor3"] = Color3.fromRGB(100, 100, 100)
+
+LMG2L["TextLabel_10"] = Instance.new("TextLabel", LMG2L["Frame_2"])
+LMG2L["TextLabel_10"]["Size"] = UDim2.new(0, 300, 0, 30)
+LMG2L["TextLabel_10"]["Position"] = UDim2.new(0, 15, 0, 265)
+LMG2L["TextLabel_10"]["Text"] = "[Output] Welcome Xploitter"
+LMG2L["TextLabel_10"]["BackgroundTransparency"] = 1
+LMG2L["TextLabel_10"]["TextXAlignment"] = Enum.TextXAlignment.Left
+
+LMG2L["UICorner_13"] = Instance.new("UICorner", LMG2L["Frame_2"])
+LMG2L["UIStroke_14"] = Instance.new("UIStroke", LMG2L["Frame_2"])
+
+local UIS = game:GetService("UserInputService")
+local main = LMG2L["Frame_2"]
+local dragging, dragInput, dragStart, startPos
+
+local function update(input)
+    local delta = input.Position - dragStart
+    main.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+main.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = main.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+main.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        update(input)
+    end
+end)
+
+local TS = game:GetService("TweenService")
+local decal = LMG2L["DecalImage"]
+
+LMG2L["TextButton_c"].MouseButton1Click:Connect(function()
+    local size = 80
+    decal.Size = UDim2.new(0, size, 0, size)
+    decal.Position = UDim2.new(0, -size, 0.5, -size / 2)
+    decal.Visible = true
+    decal.ImageTransparency = 0
+    local tween1 = TS:Create(decal, TweenInfo.new(0.8), {Position = UDim2.new(0, 15, 0.5, -size / 2)})
+    tween1:Play()
+    tween1.Completed:Connect(function()
+        local finalPos = UDim2.new(0, 15, 0.85, -size)
+        TS:Create(decal, TweenInfo.new(0.8), {Position = finalPos}):Play()
+    end)
+    LMG2L["TextLabel_10"].Text = "[Output] Backdoor Injected!"
+end)
+
+LMG2L["TextButton_d"].MouseButton1Click:Connect(function()
+    LMG2L["TextBox_a"].Text = ""
+end)
+
+LMG2L["TextButton_re"].MouseButton1Click:Connect(function()
+    local char = Player.Character
+    if char then
+        local head = char:FindFirstChild("Head")
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        if head then head:Destroy() elseif hum then hum.Health = 0 hum:BreakJoints() end
+    end
+    LMG2L["TextLabel_10"].Text = "[Output] Force Reset Executed"
+end)
+
+LMG2L["TextButton_e"].MouseButton1Click:Connect(function()
+    local text = LMG2L["TextBox_a"].Text
+    if text == "" then return end
+    for _, obj in ipairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
+        if obj:IsA("RemoteEvent") then
+            obj:FireServer(text)
+        end
+    end
+    LMG2L["TextLabel_10"].Text = "[Output] Executed via Backdoor"
+end)
+
+return LMG2L["ScreenGui_1"]
